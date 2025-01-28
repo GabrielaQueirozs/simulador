@@ -30,13 +30,22 @@ function sw(recive) {
     }
 
 
-
+// Logica para quebrar a lampâda
+    if (recive === 3){
         let som = new Audio()
         som.src = "glassbreaking.wav"
-        som.play() 
-    // trocar a imagem ( manipulação do DOM)
+        som.play()
+        //trocar a imagem 
         document.getElementById('lamp').src = "img/broken.jpg"
+        broken = true
     }
 
+// Lógica para o operador and
+    if (broken === false ) {
+        if (sw1 == true && sw2 == true) {
+         document.getElementById('lamp').src = "img/on.jpg"
+        } else {
+        document.getElementById('lamp').src = "img/off.jpg"
+    }
 }
-    
+
